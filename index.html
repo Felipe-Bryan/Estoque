@@ -76,6 +76,10 @@
     <script src="./screenChange.js"></script>
     <script>
       function restore() {
+        let confirmation = confirm('Deseja restaurar a configuração inicial?\nEssa operação não pode ser desfeita.');
+        if (!confirmation) {
+          return;
+        }
         localStorage.removeItem('products');
         localStorage.removeItem('families');
         location.reload();
