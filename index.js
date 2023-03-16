@@ -791,9 +791,3 @@ function saveProductEdit(id){
     }        
   }
 }
-
-function restoreDefault(){
-  localStorage.removeItem('products')
-  localStorage.removeItem('families')
-  location.reload()
-}
