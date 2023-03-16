@@ -506,8 +506,6 @@ function markedContent() {
   });
 }
 
-markedContent()
-
 function deleteAll(){
   products.forEach(item => {
     item.qt = 0
@@ -792,4 +790,10 @@ function saveProductEdit(id){
       closeProductModal();
     }        
   }
+}
+
+function restoreDefault(){
+  localStorage.removeItem('products')
+  localStorage.removeItem('families')
+  location.reload()
 }
