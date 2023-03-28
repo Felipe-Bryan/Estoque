@@ -3,108 +3,108 @@ const modal = new bootstrap.Modal(document.getElementById('modal'));
 let products = JSON.parse(localStorage.getItem('products'))
 
 if(!products){
-  products = [{id: 1,name: "Toddynho 200ml" ,family: "Drinks" ,qt: 0, price: 0},
-  {id: 2,name: "Toddynho Levinho 200ml" ,family: "Drinks" ,qt: 0, price: 0},
-  {id: 3,name: "Kero Coco 200ml" ,family: "Drinks" ,qt: 0, price: 0},
-  {id: 4,name: "Kero Coco 330ml" ,family: "Drinks" ,qt: 0, price: 0},
-  {id: 5,name: "Toddy Cookies Baunilha 38g" ,family: "Cookies" ,qt: 0, price: 0},
-  {id: 6,name: "Toddy Cookies Extra Baunilha 47g" ,family: "Cookies" ,qt: 0, price: 0},
-  {id: 7,name: "Toddy Cookies Extra Chocolate 47g" ,family: "Cookies" ,qt: 0, price: 0},
-  {id: 8,name: "EQlibri Panetini Presunto Defumado 40g" ,family: "EQlibri" ,qt: 0, price: 0},
-  {id: 9,name: "EQlibri Panetini Queijo Suave 40g" ,family: "EQlibri" ,qt: 0, price: 0},
-  {id: 10,name: "Na Mesa Tradicional 215g" ,family: "Palha" ,qt: 0, price: 0},
-  {id: 11,name: "Na Mesa Extra Fina 205g" ,family: "Palha" ,qt: 0, price: 0},
-  {id: 12,name: "Na Mesa Tradicional 100g" ,family: "Palha" ,qt: 0, price: 0},
-  {id: 13,name: "Na Mesa Extra Fina 90g" ,family: "Palha" ,qt: 0, price: 0},
-  {id: 14,name: "Na Mesa Tradicional 60g" ,family: "Palha" ,qt: 0, price: 0},
-  {id: 15,name: "Amendoim Ovinho 170g" ,family: "Amendoins" ,qt: 0, price: 0},
-  {id: 16,name: "Amendoim Ovinho 65g" ,family: "Amendoins" ,qt: 0, price: 0},
-  {id: 17,name: "Amendoim Ovinho Barbecue 130g" ,family: "Amendoins" ,qt: 0, price: 0},
-  {id: 18,name: "Amendoim Ovinho Barbecue 50g" ,family: "Amendoins" ,qt: 0, price: 0},
-  {id: 19,name: "Amendoim Sem Pele 100g" ,family: "Amendoins" ,qt: 0, price: 0},
-  {id: 20,name: "Amendoim Sem Pele 40g" ,family: "Amendoins" ,qt: 0, price: 0},
-  {id: 21,name: "Amendoim Japonês 145g" ,family: "Amendoins" ,qt: 0, price: 0},
-  {id: 22,name: "Amendoim Japonês 45g" ,family: "Amendoins" ,qt: 0, price: 0},
-  {id: 23,name: "Doritos Nacho 300g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 24,name: "Doritos Nacho 210g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 25,name: "Doritos Nacho 140g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 26,name: "Doritos Nacho 84g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 27,name: "Doritos Dippas 84g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 28,name: "Doritos Nacho 53g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 29,name: "Doritos Pizza 48g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 30,name: "Doritos Sweet Chili 53g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 31,name: "Doritos Dinamita Chipottle Mayo 84g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 32,name: "Doritos Dinamita Spicy Cheese 84g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 33,name: "Doritos Dinamita Chipottle Mayo 53g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 34,name: "Doritos Dinamita Spicy Cheese 53g" ,family: "Doritos" ,qt: 0, price: 0},
-  {id: 35,name: "Ruffles Sal 300g" ,family: "Ruffles" ,qt: 0, price: 0},
-  {id: 36,name: "Ruffles Sal 145g" ,family: "Ruffles" ,qt: 0, price: 0},
-  {id: 37,name: "Ruffles Sal 76g" ,family: "Ruffles" ,qt: 0, price: 0},
-  {id: 38,name: "Ruffles Cebola e Salsa 76g" ,family: "Ruffles" ,qt: 0, price: 0},
-  {id: 39,name: "Ruffles Churrasco 76g" ,family: "Ruffles" ,qt: 0, price: 0},
-  {id: 40,name: "Ruffles Sal 40g" ,family: "Ruffles" ,qt: 0, price: 0},
-  {id: 41,name: "Ruffles Queijo 40g" ,family: "Ruffles" ,qt: 0, price: 0},
-  {id: 42,name: "Ruffles Cebola e Salsa 40g" ,family: "Ruffles" ,qt: 0, price: 0},
-  {id: 43,name: "Ruffles Churrasco 40g" ,family: "Ruffles" ,qt: 0, price: 0},
-  {id: 44,name: "Cebolitos 110g" ,family: "Cebolitos" ,qt: 0, price: 0},
-  {id: 45,name: "Cebolitos 33g" ,family: "Cebolitos" ,qt: 0, price: 0},
-  {id: 46,name: "Baconzitos 103g" ,family: "Baconzitos" ,qt: 0, price: 0},
-  {id: 47,name: "Baconzitos 31g" ,family: "Baconzitos" ,qt: 0, price: 0},
-  {id: 48,name: "Cheetos Onda 122g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 49,name: "Cheetos Lua 110g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 50,name: "Cheetos Mix 95g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 51,name: "Cheetos Onda 75g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 52,name: "Cheetos Onda 45g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 53,name: "Cheetos Lua 40g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 54,name: "Cheetos Tubo 39g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 55,name: "Cheetos Mix 41g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 56,name: "Cheetos Patas 38g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 57,name: "Cheetos Pipoca 140g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 58,name: "Cheetos Pipoca 45g" ,family: "Cheetos" ,qt: 0, price: 0},
-  {id: 59,name: "Fandangos Presunto 115g" ,family: "Fandangos" ,qt: 0, price: 0},
-  {id: 60,name: "Fandangos Queijo 115g" ,family: "Fandangos" ,qt: 0, price: 0},
-  {id: 61,name: "Fandangos Presunto 80g" ,family: "Fandangos" ,qt: 0, price: 0},
-  {id: 62,name: "Fandangos Presunto 37g" ,family: "Fandangos" ,qt: 0, price: 0},
-  {id: 63,name: "Fandangos Queijo 37g" ,family: "Fandangos" ,qt: 0, price: 0},
-  {id: 64,name: "Fandangos Espiga Queijo 37g" ,family: "Fandangos" ,qt: 0, price: 0},
-  {id: 65,name: "Sensações Frango Grelhado 40g" ,family: "Sensações" ,qt: 0, price: 0},
-  {id: 66,name: "Sensações Peito de Peru 40g" ,family: "Sensações" ,qt: 0, price: 0},
-  {id: 67,name: "Sensações Frango Grelhado 80g" ,family: "Sensações" ,qt: 0, price: 0},
-  {id: 68,name: "Lay's Classica 80g" ,family: "Lays" ,qt: 0, price: 0},
-  {id: 69,name: "Lay's Sour Cream 80g" ,family: "Lays" ,qt: 0, price: 0},
-  {id: 70,name: "Lay's American Barbecue 80g" ,family: "Lays" ,qt: 0, price: 0},
-  {id: 71,name: "Lay's Salt & Vinegar 80g" ,family: "Lays" ,qt: 0, price: 0},
-  {id: 72,name: "Lay's Classica 45g" ,family: "Lays" ,qt: 0, price: 0},
-  {id: 73,name: "Lay's Sour Cream 45g" ,family: "Lays" ,qt: 0, price: 0},
-  {id: 74,name: "Lay's Rústica Sal Marinho 38g" ,family: "Lays" ,qt: 0, price: 0},
-  {id: 75,name: "Stiksy 120g" ,family: "Clássicos" ,qt: 0, price: 0},
-  {id: 76,name: "Stiksy 48g" ,family: "Clássicos" ,qt: 0, price: 0},
-  {id: 77,name: "Pingo d'Ouro Bacon 120g" ,family: "Clássicos" ,qt: 0, price: 0},
-  {id: 78,name: "Pingo d'Ouro Picanha 90g" ,family: "Clássicos" ,qt: 0, price: 0},
-  {id: 79,name: "Pingo d'Ouro Bacon 48g" ,family: "Clássicos" ,qt: 0, price: 0},
-  {id: 80,name: "Pingo d'Ouro Picanha 35g" ,family: "Clássicos" ,qt: 0, price: 0},
-  {id: 81,name: "Lanchinho 98g" ,family: "Lanchinho" ,qt: 0, price: 0},
-  {id: 82,name: "Stax Original 163g" ,family: "Stax" ,qt: 0, price: 0},
-  {id: 83,name: "Stax Salsa & Onion 158g" ,family: "Stax" ,qt: 0, price: 0},
-  {id: 84,name: "Stax Cheddar 158g" ,family: "Stax" ,qt: 0, price: 0},
-  {id: 85,name: "Torcida Pimenta Mexicana 100g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 86,name: "Torcida Cebola 100g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 87,name: "Torcida Churrasco 100g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 88,name: "Torcida Camarão com Pimenta 100g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 89,name: "Torcida Queijo 100g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 90,name: "Torcida Pão de Alho 100g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 91,name: "Torcida Vinagrete 100g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 92,name: "Torcida Pimenta Mexicana 38g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 93,name: "Torcida Cebola 38g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 94,name: "Torcida Churrasco 38g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 95,name: "Torcida Queijo 38g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 96,name: "Torcida Camarão com Pimenta 38g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 97,name: "Torcida Bacon 38g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 98,name: "Torcida Pão de Alho 38g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 99,name: "Torcida Calabresa 38g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 100,name: "Torcida Costelinha com Limão 38g" ,family: "Torcida" ,qt: 0, price: 0},
-  {id: 101,name: "Torcida Vinagrete 38g" ,family: "Torcida" ,qt: 0, price: 0},
-  ];
+  products = [{id: 1,name: "Toddynho 200ml" ,family: "Drinks" ,qt: 0, price: 0, active: false},
+{id: 2,name: "Toddynho Levinho 200ml" ,family: "Drinks" ,qt: 0, price: 0, active: false},
+{id: 3,name: "Kero Coco 200ml" ,family: "Drinks" ,qt: 0, price: 0, active: false},
+{id: 4,name: "Kero Coco 330ml" ,family: "Drinks" ,qt: 0, price: 0, active: false},
+{id: 5,name: "Toddy Cookies Baunilha 38g" ,family: "Cookies" ,qt: 0, price: 0, active: false},
+{id: 6,name: "Toddy Cookies Extra Baunilha 47g" ,family: "Cookies" ,qt: 0, price: 0, active: false},
+{id: 7,name: "Toddy Cookies Extra Chocolate 47g" ,family: "Cookies" ,qt: 0, price: 0, active: false},
+{id: 8,name: "EQlibri Panetini Presunto Defumado 40g" ,family: "Eqlibri" ,qt: 0, price: 0, active: false},
+{id: 9,name: "EQlibri Panetini Queijo Suave 40g" ,family: "Eqlibri" ,qt: 0, price: 0, active: false},
+{id: 10,name: "Na Mesa Tradicional 215g" ,family: "Palha" ,qt: 0, price: 0, active: false},
+{id: 11,name: "Na Mesa Extra Fina 205g" ,family: "Palha" ,qt: 0, price: 0, active: false},
+{id: 12,name: "Na Mesa Tradicional 100g" ,family: "Palha" ,qt: 0, price: 0, active: false},
+{id: 13,name: "Na Mesa Extra Fina 90g" ,family: "Palha" ,qt: 0, price: 0, active: false},
+{id: 14,name: "Na Mesa Tradicional 60g" ,family: "Palha" ,qt: 0, price: 0, active: false},
+{id: 15,name: "Amendoim Ovinho 170g" ,family: "Amendoins" ,qt: 0, price: 0, active: false},
+{id: 16,name: "Amendoim Ovinho 65g" ,family: "Amendoins" ,qt: 0, price: 0, active: false},
+{id: 17,name: "Amendoim Ovinho Barbecue 130g" ,family: "Amendoins" ,qt: 0, price: 0, active: false},
+{id: 18,name: "Amendoim Ovinho Barbecue 50g" ,family: "Amendoins" ,qt: 0, price: 0, active: false},
+{id: 19,name: "Amendoim Sem Pele 100g" ,family: "Amendoins" ,qt: 0, price: 0, active: false},
+{id: 20,name: "Amendoim Sem Pele 40g" ,family: "Amendoins" ,qt: 0, price: 0, active: false},
+{id: 21,name: "Amendoim Japonês 145g" ,family: "Amendoins" ,qt: 0, price: 0, active: false},
+{id: 22,name: "Amendoim Japonês 45g" ,family: "Amendoins" ,qt: 0, price: 0, active: false},
+{id: 23,name: "Doritos Nacho 300g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 24,name: "Doritos Nacho 210g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 25,name: "Doritos Nacho 140g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 26,name: "Doritos Nacho 84g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 27,name: "Doritos Dippas 84g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 28,name: "Doritos Nacho 53g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 29,name: "Doritos Pizza 48g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 30,name: "Doritos Sweet Chili 53g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 31,name: "Doritos Dinamita Chipottle Mayo 84g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 32,name: "Doritos Dinamita Spicy Cheese 84g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 33,name: "Doritos Dinamita Chipottle Mayo 53g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 34,name: "Doritos Dinamita Spicy Cheese 53g" ,family: "Doritos" ,qt: 0, price: 0, active: false},
+{id: 35,name: "Ruffles Sal 300g" ,family: "Ruffles" ,qt: 0, price: 0, active: false},
+{id: 36,name: "Ruffles Sal 145g" ,family: "Ruffles" ,qt: 0, price: 0, active: false},
+{id: 37,name: "Ruffles Sal 76g" ,family: "Ruffles" ,qt: 0, price: 0, active: false},
+{id: 38,name: "Ruffles Cebola e Salsa 76g" ,family: "Ruffles" ,qt: 0, price: 0, active: false},
+{id: 39,name: "Ruffles Churrasco 76g" ,family: "Ruffles" ,qt: 0, price: 0, active: false},
+{id: 40,name: "Ruffles Sal 40g" ,family: "Ruffles" ,qt: 0, price: 0, active: false},
+{id: 41,name: "Ruffles Queijo 40g" ,family: "Ruffles" ,qt: 0, price: 0, active: false},
+{id: 42,name: "Ruffles Cebola e Salsa 40g" ,family: "Ruffles" ,qt: 0, price: 0, active: false},
+{id: 43,name: "Ruffles Churrasco 40g" ,family: "Ruffles" ,qt: 0, price: 0, active: false},
+{id: 44,name: "Cebolitos 110g" ,family: "Cebolitos" ,qt: 0, price: 0, active: false},
+{id: 45,name: "Cebolitos 33g" ,family: "Cebolitos" ,qt: 0, price: 0, active: false},
+{id: 46,name: "Baconzitos 103g" ,family: "Baconzitos" ,qt: 0, price: 0, active: false},
+{id: 47,name: "Baconzitos 31g" ,family: "Baconzitos" ,qt: 0, price: 0, active: false},
+{id: 48,name: "Cheetos Onda 122g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 49,name: "Cheetos Lua 110g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 50,name: "Cheetos Mix 95g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 51,name: "Cheetos Onda 75g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 52,name: "Cheetos Onda 45g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 53,name: "Cheetos Lua 40g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 54,name: "Cheetos Tubo 39g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 55,name: "Cheetos Mix 41g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 56,name: "Cheetos Patas 38g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 57,name: "Cheetos Pipoca 140g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 58,name: "Cheetos Pipoca 45g" ,family: "Cheetos" ,qt: 0, price: 0, active: false},
+{id: 59,name: "Fandangos Presunto 115g" ,family: "Fandangos" ,qt: 0, price: 0, active: false},
+{id: 60,name: "Fandangos Queijo 115g" ,family: "Fandangos" ,qt: 0, price: 0, active: false},
+{id: 61,name: "Fandangos Presunto 80g" ,family: "Fandangos" ,qt: 0, price: 0, active: false},
+{id: 62,name: "Fandangos Presunto 37g" ,family: "Fandangos" ,qt: 0, price: 0, active: false},
+{id: 63,name: "Fandangos Queijo 37g" ,family: "Fandangos" ,qt: 0, price: 0, active: false},
+{id: 64,name: "Fandangos Espiga Queijo 37g" ,family: "Fandangos" ,qt: 0, price: 0, active: false},
+{id: 65,name: "Sensações Frango Grelhado 40g" ,family: "Sensações" ,qt: 0, price: 0, active: false},
+{id: 66,name: "Sensações Peito de Peru 40g" ,family: "Sensações" ,qt: 0, price: 0, active: false},
+{id: 67,name: "Sensações Frango Grelhado 80g" ,family: "Sensações" ,qt: 0, price: 0, active: false},
+{id: 68,name: "Lay's Classica 80g" ,family: "Lays" ,qt: 0, price: 0, active: false},
+{id: 69,name: "Lay's Sour Cream 80g" ,family: "Lays" ,qt: 0, price: 0, active: false},
+{id: 70,name: "Lay's American Barbecue 80g" ,family: "Lays" ,qt: 0, price: 0, active: false},
+{id: 71,name: "Lay's Salt & Vinegar 80g" ,family: "Lays" ,qt: 0, price: 0, active: false},
+{id: 72,name: "Lay's Classica 45g" ,family: "Lays" ,qt: 0, price: 0, active: false},
+{id: 73,name: "Lay's Sour Cream 45g" ,family: "Lays" ,qt: 0, price: 0, active: false},
+{id: 74,name: "Lay's Rústica Sal Marinho 38g" ,family: "Lays" ,qt: 0, price: 0, active: false},
+{id: 75,name: "Stiksy 120g" ,family: "Clássicos" ,qt: 0, price: 0, active: false},
+{id: 76,name: "Stiksy 48g" ,family: "Clássicos" ,qt: 0, price: 0, active: false},
+{id: 77,name: "Pingo d'Ouro Bacon 120g" ,family: "Clássicos" ,qt: 0, price: 0, active: false},
+{id: 78,name: "Pingo d'Ouro Picanha 90g" ,family: "Clássicos" ,qt: 0, price: 0, active: false},
+{id: 79,name: "Pingo d'Ouro Bacon 48g" ,family: "Clássicos" ,qt: 0, price: 0, active: false},
+{id: 80,name: "Pingo d'Ouro Picanha 35g" ,family: "Clássicos" ,qt: 0, price: 0, active: false},
+{id: 81,name: "Lanchinho 98g" ,family: "Lanchinho" ,qt: 0, price: 0, active: false},
+{id: 82,name: "Stax Original 163g" ,family: "Stax" ,qt: 0, price: 0, active: false},
+{id: 83,name: "Stax Salsa & Onion 158g" ,family: "Stax" ,qt: 0, price: 0, active: false},
+{id: 84,name: "Stax Cheddar 158g" ,family: "Stax" ,qt: 0, price: 0, active: false},
+{id: 85,name: "Torcida Pimenta Mexicana 100g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 86,name: "Torcida Cebola 100g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 87,name: "Torcida Churrasco 100g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 88,name: "Torcida Camarão com Pimenta 100g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 89,name: "Torcida Queijo 100g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 90,name: "Torcida Pão de Alho 100g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 91,name: "Torcida Vinagrete 100g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 92,name: "Torcida Pimenta Mexicana 38g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 93,name: "Torcida Cebola 38g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 94,name: "Torcida Churrasco 38g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 95,name: "Torcida Queijo 38g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 96,name: "Torcida Camarão com Pimenta 38g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 97,name: "Torcida Bacon 38g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 98,name: "Torcida Pão de Alho 38g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 99,name: "Torcida Calabresa 38g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 100,name: "Torcida Costelinha com Limão 38g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+{id: 101,name: "Torcida Vinagrete 38g" ,family: "Torcida" ,qt: 0, price: 0, active: false},
+];
 
   saveProducts()
 }
@@ -114,55 +114,89 @@ let families = JSON.parse(localStorage.getItem('families'))
 if(!families){
   families = [
       {
-          name: 'Drinks'
+        id:1,
+        active: true,
+        name: 'Drinks'
       },
       {
-          name: 'Palha'
+        id:2,
+        active: true,
+        name: 'Palha'
       },
       {
-          name: 'Cookies'
+        id:3,
+        active: true,
+        name: 'Cookies'
+      },
+      { 
+        id:4,
+        active: true,
+        name: 'EQlibri'
       },
       {
-          name: 'EQlibri'
+        id:5,
+        active: true,
+        name: 'Amendoins'
       },
       {
-          name: 'Amendoins'
+        id:6,
+        active: true,
+        name: 'Doritos'
       },
       {
-          name: 'Doritos'
+        id:7,
+        active: true,
+        name: 'Ruffles'
       },
       {
-          name: 'Ruffles'
+        id:8,
+        active: true,
+        name: 'Fandangos'
       },
       {
-          name: 'Fandangos'
+        id:9,
+        active: true,
+        name: 'Cheetos'
       },
       {
-          name: 'Cheetos'
+        id:10,
+        active: true,
+        name: 'Cebolitos'
       },
       {
-          name: 'Cebolitos'
+        id:11,
+        active: true,
+        name: 'Baconzitos'
       },
       {
-          name: 'Baconzitos'
+        id:12,
+        active: true,
+        name: 'Lays'
       },
       {
-          name: 'Lays'
+        id:13,
+        active: true,
+        name: 'Sensações'
       },
       {
-          name: 'Sensações'
+        id:14,
+        active: true,
+        name: 'Clássicos'
       },
       {
-          name: 'Clássicos'
+        id:15,
+        active: true,
+        name: 'Lanchinho'
       },
       {
-          name: 'Lanchinho'
+        id:16,
+        active: true,
+        name: 'Stax'
       },
       {
-          name: 'Stax'
-      },
-      {
-          name: 'Torcida'
+        id:17,
+        active: true,
+        name: 'Torcida'
       }];
 
   saveFamilies();
@@ -295,7 +329,7 @@ function addItem(id){
 
 // Page Families
 
-  function placeFamiliesFamily(){    
+function placeFamiliesFamily(){    
     families.forEach((item) => {
         let content = document.getElementById('familiesContent')
         content.innerHTML += `<div class="row">
@@ -328,9 +362,27 @@ function addItem(id){
             </svg>
           </button>
         </div>
+        <div class="row d-flex justify-content-around">
+          <div class="form-check form-switch w-50 d-flex align-items-center">
+            <input class="form-check-input" onchange="setFamilyActive(${item.id})" type="checkbox" role="switch" id="family-${item.id}-checked" ${item.active ? 'checked' : ''} />
+            <label class="form-check-label ms-1" for="family-${item.id}-checked">Disponível</label>
+          </div>
+        </div>
       </div>
       <hr class="m-0" />`
     });
+}
+
+function setFamilyActive(id){
+  const input = document.getElementById(`family-${id}-checked`);
+
+  families.forEach(item => {
+    if(item.id === id){
+      item.active = input.checked
+    }
+  })
+
+  saveFamilies();
 }
 
 function openFamilyModal(){
@@ -386,6 +438,8 @@ function saveFamily(){
   const nameIpt = document.getElementById('familyName')
 
   let newFamily = {
+    active: true,
+    id: families.length +1,
     name: nameIpt.value
   }
 
@@ -410,17 +464,22 @@ function removeFamily(id){
     return;
   }
 
-  for (let i = 0; i < families.length; i++) {
-    if(families[i].name === id){
-      families.splice(i, 1)
-    }
-  }
+  let newFamiliesArray = []
 
+  families.forEach(item => {
+    if(item.name !== id){
+      item.id = newFamiliesArray.length +1
+      newFamiliesArray.push(item)
+    }
+  })
+  
   for (let i = 0; i < products.length; i++) {
     if(products[i].family === id){
       products.splice(i, 1)
     }    
   }
+
+  families = newFamiliesArray
 
   localStorage.setItem('products', JSON.stringify(products));
   
@@ -523,15 +582,13 @@ function deleteAll(){
 // Page Produtos
 function placeProductsInProducts(){
   products.forEach((item)=>{
-      let familiesInHtml = document.querySelectorAll('.productsAccordion')
+      let familiesInHtml = document.querySelectorAll('.productsAccordion');
 
       for (let i = 0; i <familiesInHtml.length; i++) {
           if(item.family === familiesInHtml[i].id){
               familiesInHtml[i].innerHTML += `<div class="container">
               <div class="row">
-                <div class="col-8 p-0 m-0 d-flex justify-content-start align-items-center">
-                  ${item.name}
-                </div>
+                <div class="col-8 p-0 m-0 d-flex justify-content-start align-items-center">${item.name}</div>
                 <div class="col-2 p-1 d-flex justify-content-end align-items-center">
                   <button type="button" class="btn btn-success" onclick="modalEditProduct(${item.id})">
                     <svg
@@ -561,6 +618,16 @@ function placeProductsInProducts(){
                   </button>
                 </div>
               </div>
+              <div class="row d-flex justify-content-around">
+                <div class="form-check form-switch w-50 d-flex align-items-center">
+                  <input class="form-check-input" onchange="setActive(${item.id})" type="checkbox" role="switch" id="${item.id}-checked" ${item.active ? 'checked' : ''} />
+                  <label class="form-check-label ms-1" for="${item.id}-checked">Disponível</label>
+                </div>
+                <div class="input-group mb-1 w-50">
+                  <span class="input-group-text">R$</span>
+                  <input onblur="setPrice(${item.id})" id="priceInput-${item.id}" type="number" class="form-control" aria-label="Amount" value="${item.price.toFixed(2)}" />
+                </div>
+              </div>        
               <hr class="m-0" />
             </div>`
           }            
@@ -790,4 +857,31 @@ function saveProductEdit(id){
       closeProductModal();
     }        
   }
+}
+
+function setPrice(id){
+  const input = document.getElementById(`priceInput-${id}`);
+  const value = Number(input.value)
+
+  input.value = value.toFixed(2)
+
+  products.forEach(item => {
+    if(item.id === id){
+      item.price = value
+    }
+  })
+
+  saveProducts();
+}
+
+function setActive(id){
+  const input = document.getElementById(`${id}-checked`);
+
+  products.forEach(item => {
+    if(item.id === id){
+      item.active = input.checked
+    }
+  })
+
+  saveProducts();
 }
